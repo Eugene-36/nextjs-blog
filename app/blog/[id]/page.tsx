@@ -1,4 +1,3 @@
-import { title } from "process";
 import { Metadata } from "next";
 
 async function getData(id: string) {
