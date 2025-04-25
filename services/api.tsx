@@ -1,6 +1,6 @@
 export const getAllPosts = async () => {
   try {
-    const response = await fetch("https://jsonplaceholder.typicode.com/posts");
+    const response = await fetch("api/posts");
     if (!response.ok) {
       throw new Error("Network response was not ok");
     }
@@ -12,9 +12,7 @@ export const getAllPosts = async () => {
 
 export const getPostsBySearch = async (search: string) => {
   try {
-    const response = await fetch(
-      "https://jsonplaceholder.typicode.com/posts?q=" + search
-    );
+    const response = await fetch("api/posts?q=" + search);
     if (!response.ok) {
       throw new Error("Network response was not ok");
     }
