@@ -1,5 +1,6 @@
 "use client";
 import Link from "next/link";
+import { useSession, signOut } from "next-auth/react";
 import { usePathname } from "next/navigation";
 
 type NavigationProps = {
@@ -12,6 +13,8 @@ type Props = {
 
 const Navigation = ({ navLinks }: Props) => {
   const pathname = usePathname();
+  const session = useSession();
+  console.log("session", session);
   return (
     <nav
       style={{
@@ -42,6 +45,14 @@ const Navigation = ({ navLinks }: Props) => {
             </Link>
           </li>
         ))}
+        {session?.data && <Link href="/profile">Profile</Link>}
+        {session?.data ? (
+          <Link href="#" onClick={() => signOut({ callbackUrl: "/" })}>
+            Sign Out
+          </Link>
+        ) : (
+          <Link href="/signin">Sign In</Link>
+        )}
       </ul>
     </nav>
   );
