@@ -9,16 +9,17 @@ const SignInForm = () => {
   const handleSubmit: FormEventHandler<HTMLFormElement> = async (event) => {
     event.preventDefault();
     const formData = new FormData(event.currentTarget);
+
     const res = await signIn("credentials", {
       email: formData.get("email"),
       password: formData.get("password"),
       redirect: false,
     });
+    console.log("res", res);
     if (res && !res.error) {
       router.push("/profile");
     } else {
       console.error("Sign in failed", res?.error);
-      console.error("res", res);
     }
   };
   return (
@@ -27,12 +28,14 @@ const SignInForm = () => {
       <form className="mt-6 space-y-4" onSubmit={handleSubmit}>
         <input
           type="email"
+          name="email"
           placeholder="Email"
           className="w-full px-4 py-2 border rounded"
           required
         />
         <input
           type="password"
+          name="password"
           placeholder="Password"
           className="w-full px-4 py-2 border rounded"
           required
