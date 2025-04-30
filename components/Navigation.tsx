@@ -2,6 +2,7 @@
 import Link from "next/link";
 import { useSession, signOut } from "next-auth/react";
 import { usePathname } from "next/navigation";
+import s from "../styles/global.module.css";
 
 type NavigationProps = {
   label: string;
@@ -17,6 +18,7 @@ const Navigation = ({ navLinks }: Props) => {
   console.log("session", session);
   return (
     <nav
+      className={s.navigation}
       style={{
         display: "flex",
         justifyContent: "space-between",

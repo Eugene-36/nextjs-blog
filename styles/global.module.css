@@ -1,0 +1,111 @@
+.bodyElement {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+}
+.footerElement {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60px;
+  background-color: #f1f1f1;
+  border-top: 1px solid #ccc;
+}
+.container {
+  flex: 1;
+}
+.formElement {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 300px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.inputField {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.btn {
+  padding: 10px;
+  background-color: #0070f3;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+}
+.title {
+  text-align: center;
+  position: relative;
+  padding: 0;
+  margin: 0 0 15px 0;
+  font-weight: 300;
+  font-size: 40px;
+  color: #080808;
+  -webkit-transition: all 0.4s ease 0s;
+  -o-transition: all 0.4s ease 0s;
+  transition: all 0.4s ease 0s;
+}
+.signInContainer {
+  text-align: center;
+}
+.about ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  text-decoration: none;
+}
+.about ul li {
+  text-align: center;
+}
+.about ul li a {
+  text-decoration: underline;
+  color: #e108cf;
+}
+.navigation ul a {
+  text-decoration: none;
+  color: #e108cf;
+}
+.navigation ul a:hover {
+  text-decoration: underline;
+}
+/* POST STYLES */
+
+.postList {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 1rem;
+}
+
+.postList ul {
+  list-style: none;
+  padding: 0;
+}
+
+.postList li {
+  margin-bottom: 1rem;
+}
+
+.postLink {
+  display: block;
+  padding: 1rem;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  text-decoration: none;
+  color: #333;
+  transition: background 0.2s;
+}
+
+.postLink:hover {
+  background: #f9f9f9;
+}

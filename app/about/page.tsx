@@ -6,7 +6,7 @@ export const metadata: Metadata = {
 
 export default function About() {
   return (
-    <div>
+    <div style={{ textAlign: "center" }}>
       <h3>Select subitem</h3>
     </div>
   );

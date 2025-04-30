@@ -5,6 +5,7 @@ import useSWR from "swr";
 import Link from "next/link";
 import { usePosts } from "../store";
 import { getAllPosts } from "../services/api";
+import s from "../styles/global.module.css";
 const Posts = () => {
   const { data: posts, isLoading } = useSWR("posts", getAllPosts);
   // const [posts, loading, getAllPosts] = usePosts(
@@ -14,13 +15,15 @@ const Posts = () => {
   //   getAllPosts();
   // }, [getAllPosts]);
   return isLoading ? (
-    <h3>Loading...</h3>
+    <h3 style={{ textAlign: "center" }}>Loading...</h3>
   ) : (
-    <div>
+    <div className={s.postList}>
       <ul>
         {posts.map((post: { id: number; title: string }) => (
           <li key={post.id}>
-            <Link href={`/blog/${post.id}`}>{post.title}</Link>
+            <a href={`/blog/${post.id}`} className={s.postLink}>
+              {post.title}
+            </a>
           </li>
         ))}
       </ul>

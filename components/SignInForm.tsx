@@ -2,6 +2,7 @@
 import { useRouter } from "next/navigation";
 import { signIn } from "next-auth/react";
 import type { FormEventHandler } from "react";
+import s from "../styles/global.module.css";
 
 const SignInForm = () => {
   const router = useRouter();
@@ -24,26 +25,23 @@ const SignInForm = () => {
   };
   return (
     <div className="flex flex-col items-center justify-center min-h-screen py-2">
-      <h1 className="text-3xl font-bold">Sign In</h1>
-      <form className="mt-6 space-y-4" onSubmit={handleSubmit}>
+      <h1 className={s.title}>Sign In</h1>
+      <form className={s.formElement} onSubmit={handleSubmit}>
         <input
           type="email"
           name="email"
           placeholder="Email"
-          className="w-full px-4 py-2 border rounded"
+          className={s.inputField}
           required
         />
         <input
           type="password"
           name="password"
           placeholder="Password"
-          className="w-full px-4 py-2 border rounded"
+          className={s.inputField}
           required
         />
-        <button
-          type="submit"
-          className="w-full px-4 py-2 text-white bg-blue-500 rounded hover:bg-blue-600"
-        >
+        <button type="submit" className={s.btn}>
           Sign In
         </button>
       </form>

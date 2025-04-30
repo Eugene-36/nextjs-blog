@@ -1,12 +1,13 @@
 import Link from "next/link";
+import s from "../../styles/global.module.css";
 export default function AboutLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
   return (
-    <div>
-      <h1>About us</h1>
+    <div className={s.about}>
+      <h1 className={s.title}>About us</h1>
       <ul>
         <li>
           <Link href="/about/contacts">Contacts</Link>
