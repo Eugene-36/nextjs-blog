@@ -6,7 +6,6 @@ import { getPostsBySearch } from "../services/api";
 
 import s from "../styles/global.module.css";
 // import { usePosts } from "../store";
-console.log("s", s);
 
 const PostSearch = () => {
   const { mutate } = useSWR("posts");

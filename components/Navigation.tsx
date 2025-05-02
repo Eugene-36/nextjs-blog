@@ -15,7 +15,6 @@ type Props = {
 const Navigation = ({ navLinks }: Props) => {
   const pathname = usePathname();
   const session = useSession();
-  console.log("session", session);
   return (
     <nav
       className={s.navigation}

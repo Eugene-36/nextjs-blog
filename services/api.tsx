@@ -1,6 +1,11 @@
+const getBaseUrl = () =>
+  typeof window === "undefined"
+    ? process.env.BASE_URL || "http://localhost:3000"
+    : "";
+
 export const getAllPosts = async () => {
   try {
-    const response = await fetch("api/posts");
+    const response = await fetch(`${getBaseUrl()}/api/posts`);
     if (!response.ok) {
       throw new Error("Network response was not ok");
     }
@@ -12,7 +17,7 @@ export const getAllPosts = async () => {
 
 export const getPostsBySearch = async (search: string) => {
   try {
-    const response = await fetch("api/posts?q=" + search);
+    const response = await fetch(`${getBaseUrl()}/api/posts?q=${search}`);
     if (!response.ok) {
       throw new Error("Network response was not ok");
     }

@@ -16,7 +16,6 @@ const SignInForm = () => {
       password: formData.get("password"),
       redirect: false,
     });
-    console.log("res", res);
     if (res && !res.error) {
       router.push("/profile");
     } else {
